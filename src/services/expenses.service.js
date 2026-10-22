@@ -6,7 +6,9 @@ function getAll(query) {
   let filteredExpenses = expenses;
 
   if (userId) {
-    filteredExpenses = expenses.filter((exp) => exp.userId === Number(userId));
+    filteredExpenses = filteredExpenses.filter(
+      (exp) => exp.userId === Number(userId),
+    );
   }
 
   if (from && to) {
