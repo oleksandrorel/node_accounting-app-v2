@@ -8,6 +8,7 @@ usersRouter.get('/:id', usersController.getOne);
 usersRouter.post('/', usersController.create);
 usersRouter.delete('/:id', usersController.deleteOne);
 usersRouter.patch('/:id', usersController.update);
+usersRouter.put('/:id', usersController.update);
 
 module.exports = {
   usersRouter,

@@ -13,7 +13,7 @@ function getAll(query) {
     const fromTime = Date.parse(from);
     const toTime = Date.parse(to);
 
-    filteredExpenses = expenses.filter((expense) => {
+    filteredExpenses = filteredExpenses.filter((expense) => {
       const expenseTime = Date.parse(expense.spentAt);
 
       return expenseTime >= fromTime && expenseTime <= toTime;
@@ -57,6 +57,10 @@ function deleteById(id) {
 
 function update({ id, expenseBody }) {
   const expense = getById(id);
+
+  if (!expense) {
+    return;
+  }
 
   return Object.assign(expense, expenseBody);
 }
